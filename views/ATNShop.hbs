@@ -1,0 +1,86 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATN Shop</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+    integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+    crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/create">Create</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/ATNShop">Shop</a>
+          </li>
+
+        </ul>
+        <form class="d-flex" role="search" action="/search" method="post">
+          <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="txtName" />
+          <button class="btn btn-outline-success" type="submit" name="Search">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <h1 style="text-align: center;">All Products</h1>
+  <div class="dropdown" style="text-align: center; margin-bottom: 10px">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Filter
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+      <form action="/sortAscending" method="post">
+      <li><button value="submit" class="dropdown-item" > Price <i class="fa fa-arrow-up"></i></li></button>
+      </form>
+      <form action="/sortDescending" method="post">
+      <li><button  value="submit" class="dropdown-item">Price <i class="fa fa-arrow-down"></i></button></li>
+      </form>
+    </ul>
+  </div>
+  <table class="table caption-top">
+    <thead class="table-warning">
+      <tr style="text-align: center;">
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Category</th>
+        <th scope="col">Picture</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each product}}
+      <tr style="text-align: center;">
+        <td>{{name}}</td>
+        <td>{{price}}</td>
+        <td>{{category}}</td>
+        <td><img src="{{picURL}}" alt="anh" style="height: 150px; width: 150px" /></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  </div>
+
+</body>
+
+</html>
