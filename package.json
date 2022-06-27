@@ -3,5 +3,24 @@
     "express": "^4.18.1",
     "hbs": "^4.2.0",
     "mongodb": "^4.7.0"
-  }
+  },
+  "name": "asmcloud",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datnt2002/ASM-Cloud.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/datnt2002/ASM-Cloud/issues"
+  },
+  "homepage": "https://github.com/datnt2002/ASM-Cloud#readme",
+  "description": ""
 }
